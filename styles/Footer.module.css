@@ -1,0 +1,9 @@
+.footer {
+  background-color: rgba(0, 0, 0, 0.845);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 2em;
+}
+

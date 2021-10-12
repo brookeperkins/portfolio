@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+$containerheight: 21em;
+$containerwidth: 85vw;
+
+//intro text
+.concept {
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+  background-color: orangered;
+}
+
+//the big divs
+.divs {
+  display: grid;
+  grid-gap: 0.5em;
+}
+
+//for when there are two or more divs
+.splitcontainer {
+  $brun: rgb(255, 163, 5);
+  $pyramid: rgb(255, 89, 0);
+  display: grid;
+  grid-gap: 0.5em;
+  justify-content: space-evenly;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+//for when things get small & we gotta stack!
+@media (max-width: 500px) {
+  .splitcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .splitcontainer > section {
+    width: $containerwidth;
+  }
+}
+
+//------------------------->>> illustrations start <<-------------//
+
+//pyramid illustration
+.container1 {
+  $brun: rgb(255, 163, 5);
+  $pyramid: rgb(255, 89, 0);
+
+  height: $containerheight;
+  width: $containerwidth;
+
+  #one {
+    height: 100%;
+    width: 100%;
+
+    background-image: linear-gradient(
+        0deg,
+        ivory 17%,
+        ivory 19%,
+        $brun 41%,
+        $brun 43%,
+        transparent 75%
+      ),
+      linear-gradient(-45deg, brown 45%, brown 45%, transparent 45%),
+      linear-gradient(45deg, $pyramid 45%, $pyramid 45%, transparent 45%);
+    background-size: 100px 500px;
+  }
+}
+
+//ghost animation
+.container2 {
+  $blue: rgb(45, 191, 181);
+  $shadow: rgb(7, 125, 125);
+  $ghost: rgb(238, 238, 238);
+  $black: rgba(0, 0, 0, 0.673);
+
+  height: $containerheight;
+  width: $containerwidth;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $blue;
+
+  #two {
+    margin-top: 3.5em;
+    animation: float 3s ease-out infinite;
+    background-color: $ghost;
+    border-radius: 75% 75% 0 0;
+    box-shadow: cyan -2px -2px 10px 0px;
+    height: 170px;
+    position: absolute;
+    width: 150px;
+    &::before {
+      animation: shrink 3s ease-out infinite, floatUp 3s ease-out infinite;
+      background-color: $shadow;
+      border-radius: 50%;
+      bottom: -70px;
+      content: '';
+      height: 20px;
+      left: 75px;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 125px;
+    }
+    &::after {
+      color: transparent;
+      content: '.';
+      font-family: comic sans;
+      font-size: 200px;
+      position: absolute;
+      top: 155px;
+      text-shadow: 45px -217px 0 $black, 20px -250px 0 $black,
+        70px -250px 0 $black, 70px -250px 0 $ghost;
+
+      background-color: $ghost;
+      border-radius: 100%;
+      box-shadow: 30px 0 0 $blue, 60px 0 0 $ghost, 90px 0 0 $blue,
+        120px 0 0 $ghost;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  @keyframes float {
+    50% {
+      transform: translate(0, 20px);
+    }
+  }
+  @keyframes floatUp {
+    50% {
+      transform: translate(-50%, -30px);
+    }
+  }
+
+  @keyframes shrink {
+    0% {
+      width: 100%;
+    }
+    50% {
+      width: 60%;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+}
+
+//moon polaroid
+.container3 {
+  $height: 175px;
+  $width: 200px;
+
+  height: $containerheight;
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+    30deg,
+    black,
+    black,
+    rgb(191, 202, 207),
+    black,
+    black
+  );
+
+  #three {
+    height: $height + 5px;
+    width: $width - 5px;
+    background: #333;
+    border-style: solid;
+    border-width: 10px 10px 40px 10px;
+    border-color: #f3f3f3;
+    border-radius: 5px;
+    &::before {
+      margin-top: 50px;
+      margin-left: 40px;
+      position: absolute;
+      content: '';
+      background: rgb(255, 255, 255);
+      background-image: radial-gradient(lightgray 10%, transparent 30%),
+        radial-gradient(lightgray 2%, transparent 20%),
+        radial-gradient(lightgray 1%, transparent 10%),
+        radial-gradient(lightgray 2%, transparent 5%),
+        radial-gradient(lightgray 1%, transparent 40%),
+        radial-gradient(lightgray 1%, transparent 22%);
+      background-position: -500% -50%, -800% 800%, 50% -80%, 90% 100%, -25% 100%,
+        50% 400%;
+      background-size: 3.55rem 3.55rem,
+        // .55 - the last 5 adjust the pixels
+        4.55rem 4.55rem,
+        5.55rem 5.55rem, 2.55rem 2.55rem;
+      border-radius: 50%;
+      box-shadow: 2px 2px 20px hsl(0 0% 50%);
+
+      border-radius: 100px;
+      height: 70px;
+      width: 70px;
+      box-shadow: 10px -10px 30px rgb(236, 224, 206);
+      -webkit-transform: rotate(45deg);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      background: yellow;
+      margin: 50px;
+    }
+  }
+}
+
+//pumpkin
+.container4 {
+  $width: 200px;
+  $pumpkin-shadow: #f85d00;
+  $insides: #441c17;
+  $insides-shadow: #771600;
+  $pumpkin: #fb9100;
+
+  $height: 175px;
+  $width: 200px;
+
+  height: $containerheight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    -30deg,
+    black,
+    black,
+    rgb(191, 202, 207),
+    black,
+    black
+  );
+  z-index: 0;
+
+  #four {
+    margin-top: 40px;
+    background-color: $pumpkin;
+    border-radius: 200px;
+    height: 150px;
+    position: absolute;
+    width: 275px;
+
+    background-image: radial-gradient(
+      ellipse,
+      $pumpkin 49%,
+      $pumpkin-shadow 50%,
+      $pumpkin-shadow 51%,
+      $pumpkin 52%
+    );
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 75% 160%;
+    box-shadow: inset 20px 0 0 $pumpkin-shadow, inset -20px 0 0 $pumpkin-shadow;
+  }
+
+  @keyframes flicker {
+    to {
+      background-size: 75% 160%;
+    }
+  }
+
+  div::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 40%;
+    top: -70px;
+    border-top-left-radius: 80px;
+    border-left: 50px solid rgb(13, 53, 26);
+    border-top: 10px solid transparent;
+    z-index: -1;
+  }
+}
+
+//coffee
+.container5 {
+  border: 5px whitesmoke;
+  border-style: double;
+  $table2: rgb(238, 151, 0);
+  $table: rgb(170, 118, 50);
+  $outline: rgb(148, 39, 0);
+  $insidecup: orangered;
+  $shadow: rgb(201, 54, 0);
+  $steam: white;
+  $steam2: rgb(200, 255, 246);
+
+  background-color: lightblue;
+  height: $containerheight;
+  width: $containerwidth;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    $table 5px,
+    $table 20px,
+    transparent 1px,
+    transparent 25px,
+    $table 5px,
+    $table 182px,
+    transparent 20px,
+    transparent 186px,
+    $table 45px,
+    $table 201px,
+    transparent 25px,
+    transparent 206px,
+    $table 40px,
+    $table 205px
+  );
+  background-position: left bottom;
+  background-size: 295px 6px;
+  background-repeat: repeat-x;
+
+  #five::before,
+  #five::after {
+    margin-top: 12px;
+    position: absolute;
+  }
+
+  #five::before {
+    margin-top: 45px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    width: 65px;
+    height: 45px;
+    border-radius: 25px 50px 50px 80px;
+    border: 8px solid $shadow;
+    border-top-color: $shadow;
+    border-bottom-color: $shadow;
+    box-shadow: inset 0 0 0 5px $outline, 0 0 0 15px orangered,
+      0 0 0 20px $outline;
+    content: '~ ~';
+    color: rgba(255, 255, 255, 0);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 50px;
+    font-family: comic sans ms;
+    margin-left: 170px;
+    font-weight: bold;
+    text-shadow: 
+      $steam 130px -120px 5px, $steam 130px -100px 5px,
+      $steam 130px -120px 5px, $steam 130px -100px 5px, 
+      $steam 130px -120px 0px, $steam 130px -100px 0px, 
+      $steam 150px -100px 5px, $steam 150px -80px 5px,
+      $steam 150px -100px 5px, $steam 150px -80px 5px, 
+      $steam 150px -100px 0px, $steam 150px -80px 0px;
+  }
+
+  #five::after {
+    content: '#1 Grandpa';
+    font-size: 30px;
+    font-family: Lobster, sans-serif;
+    margin-left: 200px;
+    font-weight: bold;
+    margin-left: 200px;
+    color: rgba(255, 255, 255, 0.945);
+    width: 100px;
+    height: 100px;
+    border: 5px solid $outline;
+    padding: 20px;
+    border-radius: 5px 5px 30px 30px;
+    background-image: 
+    linear-gradient(to right, $insidecup, $shadow),
+    linear-gradient(to right, $insidecup, $shadow);
+  }
+
+  @media (max-width: 500px) {
+    #five::after {
+      margin-left: 150px;
+    }
+    #five::before {
+      margin-left:130px;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.five {
+  margin: 2em;
+  width: 10em;
+}
+
+.this {
+  animation: fiveChange1 ease-in-out 10s infinite;
+}
+
+.that {
+  animation: fiveChange2 ease-in-out 10s infinite;
+}
+
+.hi {
+  font-size: 1.5em;
+  color: magenta;
+}
+
+.hi:hover {
+  color: blue;
+}
+
+.formContain {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-top: 3em;
+  padding: 3em;
+  border: solid 2px rgb(141, 3, 176);
+  background: repeating-linear-gradient(
+    30deg,
+      rgba(0, 255, 255, 0.332),
+      rgba(0, 255, 255, 0.332) 5px,
+      rgba(0, 255, 255, 0.332) 5px,
+      rgba(162, 226, 249, 0.695) 10px
+    );
+}
+
+.connect {
+  width: 90%;
+  padding: 10px;
+  border: rgb(3, 251, 255) solid 5px;
+  background: rgb(1, 116, 145);
+  box-shadow: rgb(0, 98, 159) 0px 0px 10px 1px;
+  color: whitesmoke;
+  max-width: 800px;
+}
+
+.miniBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  border: solid black 1px;
+  background-color: whitesmoke;
+  box-shadow: rgb(51, 62, 51) 1px 1px 1px 1px;
+  padding: 20%;
+}
+
+.errors {
+  margin: .3em;
+  font-size: .8em;
+  font-weight: 600;
+  color: red;
+}
+
+@keyframes fiveChange1 {
+  0% {
+    stroke: #7999B3;
+  }
+  
+  20%{
+    stroke:rgb(136, 216, 176);
+  }
+
+  40% {
+    stroke: rgb(255, 183, 0);
+  }
+  
+  60% {
+    stroke: rgb(149, 255, 0);
+  }
+  
+  80% {
+    stroke: rgb(75, 105, 247);
+  }
+
+  95% {
+    stroke: #7999B3;
+  }
+}
+
+@keyframes fiveChange2 {
+  0% {
+    stroke: #f29252;
+  }
+
+  20% {
+    stroke: rgb(98, 255, 0);
+  }
+
+  40%{
+    stroke:rgb(136, 216, 176);
+  }
+  
+  60% {
+    stroke: #7999B3;
+  }
+
+  80% {
+    stroke: rgb(187, 0, 255);
+  }
+
+  95% {
+    stroke: #f29252;
+  }
+}
+
+@media (max-width: 750px) {
+  .formContain {
+    width: 80%;
+  }
+
+  .hi {
+    font-size: 1em;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,41 @@
+.icon {
+  height: 5em;
+  cursor: pointer;
+}
+
+.petal {
+  stroke: #7999b3;
+  fill: #7999b3;
+}
+
+.flowermiddle {
+  stroke: #e25d3a;
+  fill: #e25d3a;
+}
+
+.petal:hover, .flowermiddle:hover {
+  stroke: lime;
+  fill: lime;
+}
+
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 3px;
+  background-color: whitesmoke;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  margin-bottom: 2em;
+  height: 4em;
+  border-bottom: green 2px solid;
+}
+
+@media (max-width: 750px) {
+ .icon {
+   height: 2.5em;
+  }
+}
