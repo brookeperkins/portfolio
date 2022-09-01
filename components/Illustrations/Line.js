@@ -6,7 +6,7 @@ function Line(props) {
       <title>{"Divider Line"}</title>
       <g
         className={styles.lineColor}
-        strokeWidth={15}
+        strokeWidth={25}
         fill="none"
         fillRule="evenodd"
         strokeLinecap="round"

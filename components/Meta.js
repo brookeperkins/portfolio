@@ -1,7 +1,24 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Script from 'next/script';
+import * as ga from '../lib/analytics';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const Meta = ({ title, keywords, description }) => {
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+  
   return (
+    <div>
     <Head>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='keywords' content={keywords} />
@@ -17,6 +34,16 @@ const Meta = ({ title, keywords, description }) => {
       content={'social.png'}
       />
     </Head>
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`} />
+      <Script id="google-analytics" strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}');
+        `}
+      </Script>
+    </div>
   )
 }
 
@@ -26,4 +53,4 @@ Meta.defaultProps = {
   description: 'The personal portfolio site of Brooke Perkins',
 }
 
-export default Meta
+export default Meta;

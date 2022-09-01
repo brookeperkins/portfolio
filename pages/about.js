@@ -19,11 +19,10 @@ function About() {
               all truly useful things should have an artfulness to them.
             </span>
             I also believe it's our duty to uplift and support the voices of
-            marginalized folks, that Black lives matter, and that the internet
+            marginalized folks, that Black Lives matter, and that the internet
             should look cool, stay weird, and be ✨accessible✨ for everyone. I
             have a lot of fun making things with code, and love to indulge my
-            curiosity. I can work with the full stack, but have a soft spot for
-            frontend development.
+            curiosity. I <i>can</i> work with the full stack, but prefer the front end. 
           </p>
           <span className={styles.emph}>
             Here's what I've been working with lately:
@@ -40,14 +39,14 @@ function About() {
               tech3="redux" 
             />
             <Stack 
-            tech1="nextjs" 
-            tech2="node" 
-            tech3="express" 
+            tech1="next.js" 
+            tech2="vue" 
+            tech3="vuex" 
             />
             <Stack 
-            tech1="postgreSQL" 
+            tech1="three.js" 
             tech2="jest" 
-            tech3="qunit" 
+            tech3="angular" 
             />
           </section>
         </section>

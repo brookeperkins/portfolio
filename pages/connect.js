@@ -9,7 +9,7 @@ function Connect() {
       <h1>let's connect!</h1>
       <Five />
       <section className={styles.connect}>
-      You can hire me! You can tell me all about your recipe for vegan chili! You can ask me about my two kitty sons, and find out which one is my favorite this week! 
+      I'd love to hear about your potential project! You can also share your recipe for vegan chili, ask me about my cats (<a className={styles.cats} href='nomz.png' target="_blank">Nomi</a> & <a className={styles.cats} href='leafy.png' target="_blank">Leaf E. Greens</a>), or just say hello! :)
       </section>
       <section className={styles.formContain}>
         <section className={styles.miniBox}>
