@@ -22,10 +22,32 @@
 
 .cats {
   color: rgb(234, 255, 0);
+  position: relative;
+  display: inline-block;
 }
 
 .cats:hover {
   color: lime;
+  font-weight: bold;
+  cursor: grab;
+}
+
+.catpic {
+  visibility: hidden;  
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: magenta 1px 1px 15px 5px;
+}
+
+.cats .catpic {
+  position: absolute;
+  z-index: 1;
+  top: -215px;
+  left: -50px;
+}
+
+.cats:hover .catpic {
+  visibility: visible;
 }
 
 .formContain {
@@ -56,6 +78,7 @@
   box-shadow: rgb(0, 98, 159) 0px 0px 10px 2px;
   color: whitesmoke;
   max-width: 800px;
+  margin-bottom:1em;
 }
 
 .miniBox {
