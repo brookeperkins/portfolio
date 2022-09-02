@@ -12,17 +12,9 @@ function About() {
           <img className={styles.photo} src={'brooke.jpg'} />
           <Line className={styles.lineGuy} />
           <p className={styles.bioText}>
-            Howdy! My name is{' '}
-            <span className={styles.strong}>Brooke Perkins</span>, and I like to
-            make useful things. I believe that
-            <span className={styles.emph}>
-              all truly useful things should have an artfulness to them.
-            </span>
-            I also believe it's our duty to uplift and support the voices of
-            marginalized folks, that Black Lives matter, and that the internet
-            should look cool, stay weird, and be ✨accessible✨ for everyone. I
-            have a lot of fun making things with code, and love to indulge my
-            curiosity. I <i>can</i> work with the full stack, but prefer the front end. 
+            Howdy! My name is <span className={styles.strong}>Brooke Perkins</span>, and I like to
+            make useful things. I believe that<span className={styles.emph}>all truly useful things should have an artfulness to them.</span>I also believe it's our duty to uplift and support the voices of
+            marginalized folks, that Black Lives matter, and that the internet should look cool, stay weird, and be ✨accessible✨ for everyone. I have a lot of fun making things with code, and love to indulge my curiosity. I <i>can</i> work with the full stack, but prefer the front end. 
           </p>
           <span className={styles.emph}>
             Here's what I've been working with lately:
